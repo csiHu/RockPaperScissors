@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Rock, Paper, Scissors</title>
+    <link rel="icon" href="/favicon.png" type="image/x-icon" />
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+    <!-- Dark/Light Mode Switch -->
+    <div class="theme-toggle">
+        <label for="darkModeToggle" class="switch">
+            <input type="checkbox" id="darkModeToggle" />
+            <span class="slider">
+                <i class="fa-solid icon fa-sun"></i>
+            </span>
+        </label>
+    </div>
+
+    <!-- Main Sections -->
+    <main class="game-container">
+        <section id="home-section" class="page-section">
+            <h2>Welcome to Rock, Paper, Scissors!</h2>
+            <a href="#" class="nav-button" data-section="play">Play</a>
+        </section>
+
+        <!-- This is the Game Interface -->
+        <section id="play-section" class="page-section" style="display: none;">
+            <div>
+                <h1>Rock, Paper, Scissors</h1>
+
+                <div class="choices">
+                    <i class="fa-solid fa-hand-back-fist" data-choice="rock"></i>
+                    <i class="fa-solid fa-hand" data-choice="paper"></i>
+                    <i class="fa-solid fa-hand-scissors" data-choice="scissors"></i>
+                </div>
+
+                <div class="battle">
+                    <div id="user-choice" class="icon"></div>
+                    <div class="vs-text">VS</div>
+                    <div id="computer-choice" class="icon"><i class="fa-solid fa-question"></i></div>
+                </div>
+
+                <div id="result" class="result-text">Make your move!</div>
+            </div>
+        </section>
+
+        <!-- Short Game Description -->
+        <section id="about-section" class="page-section" style="display: none;">
+            <h1>About This Game</h1>
+            <p>This is a simple Rock Paper Scissors game.</p>
+        </section>
+
+        <!-- Rules -->
+        <section id="rules-section" class="page-section info-section" style="display: none;">
+            <h2>Game Rules</h2>
+            <p>Rock Paper Scissors is a simple game where:</p>
+            <ul>
+                <li><strong>Rock</strong> beats <strong>Scissors</strong></li>
+                <li><strong>Scissors</strong> beats <strong>Paper</strong></li>
+                <li><strong>Paper</strong> beats <strong>Rock</strong></li>
+            </ul>
+            <p>The player chooses one of the three options, and the computer randomly chooses another. The winner is
+                determined based on the rules above. If both choices are the same, it's a draw.</p>
+        </section>
+
+        <!-- Strategy -->
+        <section id="strategy-section" class="page-section info-section" style="display: none;">
+            <h2>Game Strategy</h2>
+            <p>While Rock Paper Scissors is based on luck, players can increase their chances by understanding some
+                psychological patterns:</p>
+            <ul>
+                <li><strong>Start with Rock:</strong> Many players begin with Rock because it's perceived as the
+                    "strong" choice. If you start with Paper, you might win more often.</li>
+                <li><strong>Watch for patterns:</strong> Players may repeat their winning choices or avoid losing ones.
+                    Try to predict their next move based on this.</li>
+                <li><strong>Randomize your choices:</strong> Don't always choose the same thing—try mixing up Rock,
+                    Paper, and Scissors randomly to avoid being predictable.</li>
+            </ul>
+            <h3><strong>Disclaimer</strong></h3>
+            <p>Just remember, though, that you're playing against a computer, so the strategies above won't work as
+                well. The computer picks its moves randomly, so it's really just a game of chance instead of relying on
+                patterns or strategy.</p>
+        </section>
+
+        <!-- FAQs -->
+        <section id="faqs-section" class="page-section info-section" style="display: none;">
+            <h2>Frequently Asked Questions</h2>
+            <dl>
+                <dt>What happens if both players choose the same item?</dt>
+                <dd>It's a draw.</dd>
+                <dt>Can I play multiple rounds?</dt>
+                <dd>Yes, the game keeps track of your score and total games played.</dd>
+                <dt>How do I reset the score?</dt>
+                <dd>Click the "Reset Score" button to clear the scoreboard.</dd>
+                <dt>How do the themes work?</dt>
+                <dd>Use the theme toggle to switch between light and dark modes.</dd>
+                <dt>Was the text in the Info section generated by AI?</dt>
+                <dd>Yep! I'm too lazy to write all of this myself and this is basically just filler so the site looks
+                    more professional.</dd>
+            </dl>
+        </section>
+    </main>
+
+    <!-- Scoreboard -->
+    <div id="scoreboard" style="display: none;">
+        <h3>Scoreboard</h3>
+        <p>Total Games: <span id="total-games">0</span></p>
+        <p>User Wins: <span id="user-wins">0</span></p>
+        <p>Computer Wins: <span id="computer-wins">0</span></p>
+        <p>Draws: <span id="draws">0</span></p>
+        <button id="reset-score">Reset</button>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-container">
+            <div class="logo">RPS.</div>
+
+            <div class="footer-top">
+                <div id="about-me">
+                    <h3>About me</h3>
+                    <p>This game is created by csiHu, a student at the University of Debrecen, as an assignment for a
+                        web development course.</p>
+                </div>
+
+                <div class="links">
+                    <h3 class="quick-links-h3">Quick Links</h3>
+                    <ul>
+                        <li><a href="#" data-section="home">Home</a></li>
+                        <li><a href="#" data-section="play">Play</a></li>
+                        <li><a href="#" data-section="about">About the Game</a></li>
+                    </ul>
+                </div>
+
+                <div class="links">
+                    <h3 class="services-h3">Info</h3>
+                    <ul>
+                        <li><a href="#" data-section="rules">Rules</a></li>
+                        <li><a href="#" data-section="strategy">Strategy</a></li>
+                        <li><a href="#" data-section="faqs">FAQs</a></li>
+                    </ul>
+                </div>
+
+                <div class="links">
+                    <h3 class="categories-h3">Credits</h3>
+                    <ul>
+                        <li>
+                            <a href="https://www.flaticon.com/free-icons/rock-paper-scissors" target="_blank"
+                                title="rock paper scissors icons">Favicon created by Freepik - Flaticon
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://fontawesome.com/icons" target="_blank" title="souce of every icon">
+                                Free Icons - Font Awesome
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <div class="copyright">
+                    <p>&copy; 2025 csiHu. All rights reserved.</p>
+                </div>
+                <div class="social">
+                    <a href="https://github.com/csiHu" target="_blank" aria-label="Github"><i
+                            class="fa-brands fa-github"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
