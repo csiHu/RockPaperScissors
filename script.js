@@ -146,7 +146,6 @@ function updateScoreDisplay() {
     document.getElementById("total-games").textContent = totalGames;
 }
 
-// Hook this into the existing showResult()
 function showResult(user, computer) {
     const resultDiv = document.getElementById("result");
 
@@ -162,7 +161,7 @@ function showResult(user, computer) {
         resultDiv.textContent = "Computer wins!";
     }
 
-    updateScoreboard(user, computer); // Add this line
+    updateScoreboard(user, computer);
 }
 
 // Reset score button
@@ -171,6 +170,6 @@ document.getElementById("reset-score").addEventListener("click", () => {
     computerWins = 0;
     draws = 0;
     totalGames = 0;
-    updateScoreDisplay(); // just resets UI with current values
+    updateScoreDisplay();
 });
 
